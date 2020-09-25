@@ -6,14 +6,6 @@ services:
     ports:
       - 8080:80
     deploy:
+      mode: replicated
       replicas: 3
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 1024M
-        reservations:
-          cpus: '0.25'
-          memory: 512M
-      placement:
-        constraints:
-          - node.role == worker
+      
